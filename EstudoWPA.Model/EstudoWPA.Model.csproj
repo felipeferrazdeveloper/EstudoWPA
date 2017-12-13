@@ -78,10 +78,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\DbConfig.cs" />
-    <Compile Include="Database\Model\Aluno.cs" />
-    <Compile Include="Database\Model\Curso.cs" />
-    <Compile Include="Database\Model\Instituicao.cs" />
-    <Compile Include="Database\Model\Professor.cs" />
+    <Compile Include="Database\Model\Estabelecimento.cs" />
+    <Compile Include="Database\Model\Locacao.cs" />
+    <Compile Include="Database\Model\Quarto.cs" />
+    <Compile Include="Database\Repository\EstabelecimentoRepository.cs" />
+    <Compile Include="Database\Repository\LocacaoRepository.cs" />
+    <Compile Include="Database\Repository\QuartoRepository.cs" />
+    <Compile Include="Database\Repository\RepositoryBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -102,8 +105,6 @@
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Database\Repository\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

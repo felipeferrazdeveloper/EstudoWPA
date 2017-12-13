@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EstudoWPA.Model.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,7 @@ namespace EstudoWPA.Controllers
     {
         public ActionResult Index()
         {
+            var l = DbConfig.Instance.EstabelecimentoRepository.FindAll();
             return View();
         }
 

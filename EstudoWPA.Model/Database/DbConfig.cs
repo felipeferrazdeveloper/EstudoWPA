@@ -14,6 +14,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using EstudoWPA.Model.Database.Repository;
+using EstudoWPA.Model.Database.Model;
 
 namespace EstudoWPA.Model.Database
 {
@@ -36,31 +38,19 @@ namespace EstudoWPA.Model.Database
             }
         }
 
-        //public PessoaRepository PessoaRepository { get; set; }
-        //public UsuarioRepository UsuarioRepository { get; set; }
-        //public InstituicaoRespository InstituicaoRespository { get; set; }
-        //public CursoRepository CursoRepository { get; set; }
-        //public DisciplinaRepository DisciplinaRepository { get; set; }
-        //public ProfessorRepository ProfessorRepository { get; set; }
-        //public TarefaRepository TarefaRepository { get; set; }
-        //public DisciplinaAlunoRepository DisciplinaAlunoRepository { get; set; }
-        //public TarefaAlunoRepository TarefaAlunoRepository { get; set; }
-        //public ConfiguracaoRepository ConfiguracaoRepository { get; set; }
+        public EstabelecimentoRepository EstabelecimentoRepository { get; set; }
+        public QuartoRepository QuartoRepository { get; set; }
+        public LocacaoRepository LocacaoRepository { get; set; }
+
 
         private DbConfig()
         {
             Conectar();
 
-            //this.PessoaRepository = new PessoaRepository(this.Session);
-            //this.UsuarioRepository = new UsuarioRepository(this.Session);
-            //this.InstituicaoRespository = new InstituicaoRespository(this.Session);
-            //this.CursoRepository = new CursoRepository(this.Session);
-            //this.DisciplinaRepository = new DisciplinaRepository(this.Session);
-            //this.ProfessorRepository = new ProfessorRepository(this.Session);
-            //this.TarefaRepository = new TarefaRepository(this.Session);
-            //this.DisciplinaAlunoRepository = new DisciplinaAlunoRepository(this.Session);
-            //this.TarefaAlunoRepository = new TarefaAlunoRepository(this.Session);
-            //this.ConfiguracaoRepository = new ConfiguracaoRepository(this.Session);
+            this.EstabelecimentoRepository = new EstabelecimentoRepository(this.Session);
+            this.QuartoRepository = new QuartoRepository(this.Session);
+            this.LocacaoRepository = new LocacaoRepository(this.Session);
+
         }
 
         public void Initialize(object obj)
@@ -74,10 +64,10 @@ namespace EstudoWPA.Model.Database
             {
 
                 var diretorio = System.Environment.CurrentDirectory;
-                var arquivo = diretorio + "/Config/GertConfig.ini";
+                var arquivo = diretorio + "/Config/DbConfig.ini";
                 if (HttpContext.Current != null)
                 {
-                    arquivo = HttpContext.Current.Server.MapPath("/Config/GertConfig.ini").Replace("\\", "/");
+                    arquivo = HttpContext.Current.Server.MapPath("/Config/DbConfig.ini").Replace("\\", "/");
                 }
 
                 if (!System.IO.File.Exists(arquivo))
@@ -207,9 +197,9 @@ namespace EstudoWPA.Model.Database
             {
                 var mapper = new ModelMapper();
 
-                //mapper.AddMappings(
-                //    Assembly.GetAssembly(typeof(UsuarioMap)).GetTypes()
-                //);
+                mapper.AddMappings(
+                    Assembly.GetAssembly(typeof(EstabelecimentoMap)).GetTypes()
+                );
 
                 return mapper.CompileMappingForAllExplicitlyAddedEntities();
             }
