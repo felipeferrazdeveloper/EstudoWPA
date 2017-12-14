@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoWPA", "EstudoWPA\EstudoWPA.csproj", "{B13FF704-0DC6-4CF1-A2F1-023BCC1E1889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoWPA.Model", "EstudoWPA.Model\EstudoWPA.Model.csproj", "{EC8E103B-898F-4376-995F-CB7AF2BF3011}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoWPA.DB", "EstudoWPA.Model\EstudoWPA.DB.csproj", "{EC8E103B-898F-4376-995F-CB7AF2BF3011}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

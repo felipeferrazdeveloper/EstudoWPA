@@ -1,4 +1,5 @@
-﻿using EstudoWPA.Model.Database;
+﻿using Estudo.DB.Database;
+using Estudo.DB.Database.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,22 +12,45 @@ namespace EstudoWPA.Controllers
     {
         public ActionResult Index()
         {
-            var l = DbConfig.Instance.EstabelecimentoRepository.FindAll();
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Estabelecimento()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            var estabelecimentos = DbConfig.Instance.EstabelecimentoRepository.FindAll();
+            return View(estabelecimentos);
         }
 
-        public ActionResult Contact()
+        public ActionResult Quarto()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            var quartos = DbConfig.Instance.QuartoRepository.FindAll();
+            return View(quartos);
         }
+
+        public ActionResult Locacao()
+        {
+            var locacoes = DbConfig.Instance.LocacaoRepository.FindAll();
+            return View(locacoes);
+        }
+
+        public ActionResult CreateEstabelecimento()
+        {
+            var est = new Estabelecimento();
+            return View(est);
+        }
+
+        public ActionResult CreateQuarto()
+        {
+            var qua = new Quarto();
+            return View(qua);
+        }
+
+        public ActionResult CreateLocacao()
+        {
+            var loc = new Locacao();
+            return View(loc);
+        }
+
+
     }
 }

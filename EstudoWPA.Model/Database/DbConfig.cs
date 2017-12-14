@@ -14,10 +14,10 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using EstudoWPA.Model.Database.Repository;
-using EstudoWPA.Model.Database.Model;
+using Estudo.DB.Database.Repository;
+using Estudo.DB.Database.Model;
 
-namespace EstudoWPA.Model.Database
+namespace Estudo.DB.Database
 {
     public class DbConfig
     {
